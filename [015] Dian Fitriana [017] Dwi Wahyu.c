@@ -131,6 +131,251 @@ void mergeSort1(int low, int mid, int high)
     }
 }
 
+void mergeSort2(int low, int mid, int high)
+{
+	int x = low;
+	int y = mid + 1;
+	int z = low;
+	struct file temp[high+1];
+
+   		while(x <= mid && y <= high)
+		{
+        	if (strcmp(folder[x].namafile,folder[y].namafile)<=0)
+        	{
+            	temp[z++] = folder[x++];
+        	}
+        	else if (strcmp(folder[x].namafile , folder[y].namafile)>=0)
+        	{
+            	temp[z++] = folder[y++];
+        	}
+    	}
+	
+	while(x<=mid)
+	{
+		temp[z++] = folder[x++];
+	}
+
+	while(y<=high)
+	{
+		temp[z++] = folder[y++];
+	}   
+	 
+	for(x = low; x <= high; x++)
+    {
+        folder[x] = temp[x];
+    }
+}
+
+void mergeSort3(int low, int mid, int high)
+{
+	int x = low;
+	int y = mid + 1;
+	int z = low;
+	struct file temp[high+1];
+
+   		while(x <= mid && y <= high)
+		{
+        	if (strcmp(folder[x].jns.jenisfile,folder[y].jns.jenisfile)<=0)
+        	{
+            	temp[z++] = folder[x++];
+        	}
+        	else if (strcmp(folder[x].jns.jenisfile, folder[y].jns.jenisfile)>=0)
+        	{
+            	temp[z++] = folder[y++];
+        	}
+    	}
+	
+	while(x<=mid)
+	{
+		temp[z++] = folder[x++];
+	}
+
+	while(y<=high)
+	{
+		temp[z++] = folder[y++];
+	}   
+	 
+	for(x = low; x <= high; x++)
+    {
+        folder[x] = temp[x];
+    }
+}
+
+void mergeSort4(int low, int mid, int high)
+{
+	int x = low;
+	int y = mid + 1;
+	int z = low;
+	struct file temp[high+1];
+
+   		while(x <= mid && y <= high)
+		{
+        	if (strcmp(folder[x].jns.ekstensi,folder[y].jns.ekstensi)<=0)
+        	{
+            	temp[z++] = folder[x++];
+        	}
+        	else if (strcmp(folder[x].jns.ekstensi, folder[y].jns.ekstensi)>=0)
+        	{
+            	temp[z++] = folder[y++];
+        	}
+    	}
+	
+	while(x<=mid)
+	{
+		temp[z++] = folder[x++];
+	}
+
+	while(y<=high)
+	{
+		temp[z++] = folder[y++];
+	}   
+	 
+	for(x = low; x <= high; x++)
+    {
+        folder[x] = temp[x];
+    }
+}
+
+void mergeSort5(int low, int mid, int high)
+{
+	int x = low;
+	int y = mid + 1;
+	int z = low;
+	struct file temp[high+1];
+
+   		while(x <= mid && y <= high)
+		{
+        	if (strcmp(folder[x].owner,folder[y].owner)<=0)
+        	{
+            	temp[z++] = folder[x++];
+        	}
+        	else if (strcmp(folder[x].owner, folder[y].owner)>=0)
+        	{
+            	temp[z++] = folder[y++];
+        	}
+    	}
+	
+	while(x<=mid)
+	{
+		temp[z++] = folder[x++];
+	}
+
+	while(y<=high)
+	{
+		temp[z++] = folder[y++];
+	}   
+	 
+	for(x = low; x <= high; x++)
+    {
+        folder[x] = temp[x];
+    }
+}
+
+void mergeSort6(int low, int mid, int high)
+{
+	int x = low;
+	int y = mid + 1;
+	int z = low;
+	struct file temp[high+1];
+
+   		while(x <= mid && y <= high)
+		{
+        	if (folder[x].date.tanggal <= folder[y].date.tanggal)
+        	{
+            	temp[z++] = folder[x++];
+        	}
+        	else if (folder[x].date.tanggal >= folder[y].date.tanggal)
+        	{
+            	temp[z++] = folder[y++];
+        	}
+    	}
+	
+	while(x<=mid)
+	{
+		temp[z++] = folder[x++];
+	}
+
+	while(y<=high)
+	{
+		temp[z++] = folder[y++];
+	}   
+	 
+	for(x = low; x <= high; x++)
+    {
+        folder[x] = temp[x];
+    }
+}
+
+void mergeSort7(int low, int mid, int high)
+{
+	int x = low;
+	int y = mid + 1;
+	int z = low;
+	struct file temp[high+1];
+
+   		while(x <= mid && y <= high)
+		{
+        	if (folder[x].date.bulan <= folder[y].date.bulan)
+        	{
+            	temp[z++] = folder[x++];
+        	}
+        	else if (folder[x].date.bulan >= folder[y].date.bulan)
+        	{
+            	temp[z++] = folder[y++];
+        	}
+    	}
+	
+	while(x<=mid)
+	{
+		temp[z++] = folder[x++];
+	}
+
+	while(y<=high)
+	{
+		temp[z++] = folder[y++];
+	}   
+	 
+	for(x = low; x <= high; x++)
+    {
+        folder[x] = temp[x];
+    }
+}
+
+void mergeSort8(int low, int mid, int high)
+{
+	int x = low;
+	int y = mid + 1;
+	int z = low;
+	struct file temp[high+1];
+
+   		while(x <= mid && y <= high)
+		{
+        	if (folder[x].date.tahun <= folder[y].date.tahun)
+        	{
+            	temp[z++] = folder[x++];
+        	}
+        	else if (folder[x].date.tahun >= folder[y].date.tahun)
+        	{
+            	temp[z++] = folder[y++];
+        	}
+    	}
+	
+	while(x<=mid)
+	{
+		temp[z++] = folder[x++];
+	}
+
+	while(y<=high)
+	{
+		temp[z++] = folder[y++];
+	}   
+	 
+	for(x = low; x <= high; x++)
+    {
+        folder[x] = temp[x];
+    }
+}
+
 void partition(int low, int high, int cari)
 {
 	int mid;
@@ -143,12 +388,63 @@ void partition(int low, int high, int cari)
         partition(mid + 1, high, cari);
         mergeSort1(low, mid, high); //id file
     	}
+		else if(cari==2)
+    	{
+    	mid = (low + high) / 2;
+        partition(low, mid, cari);
+        partition(mid + 1, high, cari);
+        mergeSort2(low, mid, high); // nama file
+		}
+	  	else if(cari==3)
+    	{
+    	mid = (low + high) / 2;
+        partition(low, mid, cari);
+        partition(mid + 1, high, cari);
+        mergeSort3(low, mid, high); //jensi file
+		}
+	   	else if(cari==4)
+    	{
+    	mid = (low + high) / 2;
+        partition(low, mid, cari);
+        partition(mid + 1, high, cari);
+        mergeSort4(low, mid, high); //ekstensi file
+		}
+	   	else if(cari==5)
+    	{
+    	mid = (low + high) / 2;
+        partition(low, mid, cari);
+        partition(mid + 1, high, cari);
+        mergeSort5(low, mid, high); //owner file
+		}
+		else if(cari==6)
+		{
+		mid = (low + high) / 2;
+        partition(low, mid, cari);
+        partition(mid + 1, high, cari);
+        mergeSort6(low, mid, high); //tanggal
+		}
+		else if(cari==7)
+		{
+		mid = (low + high) / 2;
+        partition(low, mid, cari);
+        partition(mid + 1, high, cari);
+        mergeSort7(low, mid, high); //bulan
+		}
+		else if(cari==8)
+		{
+		mid = (low + high) / 2;
+        partition(low, mid, cari);
+        partition(mid + 1, high, cari);
+        mergeSort8(low, mid, high); //tahun
+		}
     }
 	else
 	{
 		return;	
-	}	
-}int intersearch1(int cari, int low, int high, int urut)
+	}		
+}
+
+int intersearch1(int cari, int low, int high, int urut)
 {
 	int posisi;
 	
