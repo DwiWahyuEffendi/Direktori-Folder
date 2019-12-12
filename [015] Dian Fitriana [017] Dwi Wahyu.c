@@ -14,6 +14,8 @@ struct datemodified
 	int tanggal;
 	int bulan;
 	int tahun;
+	int cari;
+	int urut;	
 }; typedef struct datemodified  date;
 
 struct jenis
@@ -31,6 +33,9 @@ struct file
 	char owner[50];
 }; typedef struct file fl;
 fl folder[50];
+
+int i = 0, a = 0, b = 1, cariid, hasil;
+
 void tambahdata()
 {
 	printf("\n\t=======================================");
@@ -86,6 +91,87 @@ void lihatdata()
 	else if(i==0)
 	{
 		printf("\n\tHARAP MENAMBAHKAN DATA TERLEBIH DAHULU!!!");
+	}
+	getch();
+	system("cls");
+}
+
+void mergeSort1(int low, int mid, int high)
+{
+	int x = low;
+	int y = mid + 1;
+	int z = low;
+	struct file temp[high+1];
+
+   		while(x <= mid && y <= high)
+		{
+        	if (folder[x].idfile <= folder[y].idfile)
+        	{
+            	temp[z++] = folder[x++];
+        	}
+        	else if (folder[x].idfile >= folder[y].idfile)
+        	{
+            	temp[z++] = folder[y++];
+        	}
+    	}
+
+	while(x<=mid)
+	{
+		temp[z++] = folder[x++];
+	}
+
+	while(y<=high)
+	{
+		temp[z++] = folder[y++];
+	}   
+	 
+	for(x = low; x <= high; x++)
+    {
+        folder[x] = temp[x];
+    }
+}
+
+void partition(int low, int high, int cari)
+{
+	int mid;
+    if(low < high)
+    {
+    	if(cari==1)
+    	{
+        mid = (low + high) / 2;
+        partition(low, mid, cari);
+        partition(mid + 1, high, cari);
+        mergeSort1(low, mid, high); //id file
+    	}
+    }
+	else
+	{
+		return;	
+	}	
+}
+
+void ubahdata()
+{
+	int b = 0;
+	if(i==0)
+	{
+		printf("DATA TIDAK DI TEMUKAN MASUKKAN DATA TERLEBIH DAHULU!!!");
+	}
+	else
+	{
+		partition(0, i - 1, 1); //Memanggil fungsi partition
+		printf("\n\t==========================================");
+		printf("\n\tMASUKKAN ID FILE UNTUK MENGUBAH DATA : ");
+		scanf("%d", &cariid);
+		hasil = intersearch1(cariid, 0, i-1, 1);
+		if(hasil==-1)
+		{
+			printf("\n\tDATA TIDAK DI TEMUKAN");
+		}
+		else
+		{
+			updatedata(hasil);
+		}
 	}
 	getch();
 	system("cls");
