@@ -14,6 +14,8 @@ struct datemodified
 	int tanggal;
 	int bulan;
 	int tahun;
+	int cari;
+	int urut;	
 }; typedef struct datemodified  date;
 
 struct jenis
@@ -31,6 +33,9 @@ struct file
 	char owner[50];
 }; typedef struct file fl;
 fl folder[50];
+
+int i = 0, a = 0, b = 1, cariid, hasil;
+
 void tambahdata()
 {
 	printf("\n\t=======================================");
@@ -86,6 +91,165 @@ void lihatdata()
 	else if(i==0)
 	{
 		printf("\n\tHARAP MENAMBAHKAN DATA TERLEBIH DAHULU!!!");
+	}
+	getch();
+	system("cls");
+}
+
+void mergeSort1(int low, int mid, int high)
+{
+	int x = low;
+	int y = mid + 1;
+	int z = low;
+	struct file temp[high+1];
+
+   		while(x <= mid && y <= high)
+		{
+        	if (folder[x].idfile <= folder[y].idfile)
+        	{
+            	temp[z++] = folder[x++];
+        	}
+        	else if (folder[x].idfile >= folder[y].idfile)
+        	{
+            	temp[z++] = folder[y++];
+        	}
+    	}
+
+	while(x<=mid)
+	{
+		temp[z++] = folder[x++];
+	}
+
+	while(y<=high)
+	{
+		temp[z++] = folder[y++];
+	}   
+	 
+	for(x = low; x <= high; x++)
+    {
+        folder[x] = temp[x];
+    }
+}
+
+void partition(int low, int high, int cari)
+{
+	int mid;
+    if(low < high)
+    {
+    	if(cari==1)
+    	{
+        mid = (low + high) / 2;
+        partition(low, mid, cari);
+        partition(mid + 1, high, cari);
+        mergeSort1(low, mid, high); //id file
+    	}
+    }
+	else
+	{
+		return;	
+	}	
+}int intersearch1(int cari, int low, int high, int urut)
+{
+	int posisi;
+	
+	if(urut==1)
+	{
+	posisi = ((cari - folder[low].idfile) * ((high-low) + low))/ (folder[high].idfile - folder[low].idfile);
+	
+	for(low = 0; low<=high ; low++)
+	{
+		if(folder[posisi].idfile == cari)
+		{
+			return posisi;
+			break;
+		}
+		else if(folder[posisi].idfile < cari)
+		{
+			posisi = posisi + 1;
+		}
+	}
+	}
+	else if(urut==2)
+	{
+	posisi = ((cari - folder[low].date.tanggal) * ((high-low) + low))/ (folder[high].date.tanggal - folder[low].date.tanggal); 
+	
+	for(low = 0; low<=high ; low++)
+	{
+		if(folder[posisi].date.tanggal == cari)
+		{
+			return posisi;
+			break;
+		}
+		else if(folder[posisi].date.tanggal < cari)
+		{
+			posisi = posisi + 1;
+		}
+	}
+	}
+	else if(urut==3)
+	{
+	posisi = ((cari - folder[low].date.bulan) * ((high-low) + low))/ (folder[high].date.bulan - folder[low].date.bulan);
+	
+	for(low = 0; low<=high ; low++)
+	{
+		if(folder[posisi].date.bulan == cari)
+		{
+			return posisi;
+			break;
+		}
+		else if(folder[posisi].date.bulan < cari)
+		{
+			posisi = posisi + 1;
+		}
+	} 
+	}
+	else if(urut==4)
+	{
+	posisi = ((cari - folder[low].date.tahun) * ((high-low) + low))/ (folder[high].date.tahun - folder[low].date.tahun);
+
+	for(low = 0; low<=high ; low++)
+	{
+		if(folder[posisi].date.tahun == cari)
+		{
+			return posisi;
+			break;
+		}
+		else if(folder[posisi].date.tahun < cari)
+		{
+			posisi = posisi + 1;
+		}
+	} 
+	}
+
+		
+	if (low > high)
+	{
+	return -1;
+	}
+}
+
+void ubahdata()
+{
+	int b = 0;
+	if(i==0)
+	{
+		printf("DATA TIDAK DI TEMUKAN MASUKKAN DATA TERLEBIH DAHULU!!!");
+	}
+	else
+	{
+		partition(0, i - 1, 1); //Memanggil fungsi partition
+		printf("\n\t==========================================");
+		printf("\n\tMASUKKAN ID FILE UNTUK MENGUBAH DATA : ");
+		scanf("%d", &cariid);
+		hasil = intersearch1(cariid, 0, i-1, 1);
+		if(hasil==-1)
+		{
+			printf("\n\tDATA TIDAK DI TEMUKAN");
+		}
+		else
+		{
+			updatedata(hasil);
+		}
 	}
 	getch();
 	system("cls");
