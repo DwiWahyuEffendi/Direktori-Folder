@@ -149,3 +149,55 @@ main()
 			break;
 	}
 }
+
+void pengurutandata()
+{
+	int pilihan;
+	printf("\n\t=======================================================");
+	printf("\n\tURUTKAN DATA BERDASARKAN");
+	printf("\n\t1. ID FILE");
+	printf("\n\t2. NAMA FILE");
+	printf("\n\t3. JENIS FILE");
+	printf("\n\t4. EKSISTENSI FILE"); 
+	printf("\n\t5. OWNER FILE");
+	printf("\n\t6. TANGGAL");
+	printf("\n\t7. BULAN");
+	printf("\n\t8. TAHUN");
+	printf("\n\t=======================================================");
+	printf("\n\tMASUKKAN PILIHAN URUTAN YANG DI INGINKAN : ");
+	scanf("%d", &pilihan);
+	system("cls");
+	
+	switch(pilihan)
+	{
+		case 1 :
+			partition(0, i-1, 1);
+			lihatdata(); break;
+		case 2 :
+			partition(0, i-1, 2);
+			lihatdata(); break;
+		case 3 :
+			partition(0, i-1, 3);
+			lihatdata(); break;
+		case 4 :
+			partition(0, i-1, 4);
+			lihatdata(); break;
+		case 5 :
+			partition(0, i-1, 5);
+			lihatdata(); break;
+		case 6 :
+			partition(0, i-1, 6);
+			lihatdata(); break;
+		case 7 :
+			partition(0, i-1, 7);
+			lihatdata(); break;
+		case 8 :
+			partition(0, i-1, 8);
+			lihatdata(); break;
+		default : 
+			printf("\n\tMASUKKAN PILIHAN YANG BENAR (1-5)");
+			getch();
+			system("cls");
+			break;
+	}
+}
