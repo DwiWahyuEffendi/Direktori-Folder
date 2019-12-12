@@ -15,7 +15,7 @@ struct datemodified
 	int bulan;
 	int tahun;
 	int cari;
-	int urut;	
+	int urut;
 }; typedef struct datemodified  date;
 
 struct jenis
@@ -64,7 +64,7 @@ void tambahdata()
 
 void lihatdata()
 {
-	if(i!=0)
+		if(i!=0)
 	{
 		while(a<i)
 		{
@@ -93,7 +93,7 @@ void lihatdata()
 		printf("\n\tHARAP MENAMBAHKAN DATA TERLEBIH DAHULU!!!");
 	}
 	getch();
-	system("cls");
+	system("cls");	
 }
 
 void mergeSort1(int low, int mid, int high)
@@ -388,7 +388,7 @@ void partition(int low, int high, int cari)
         partition(mid + 1, high, cari);
         mergeSort1(low, mid, high); //id file
     	}
-		else if(cari==2)
+    	else if(cari==2)
     	{
     	mid = (low + high) / 2;
         partition(low, mid, cari);
@@ -437,11 +437,11 @@ void partition(int low, int high, int cari)
         partition(mid + 1, high, cari);
         mergeSort8(low, mid, high); //tahun
 		}
-    }
+    }  
 	else
 	{
 		return;	
-	}		
+	}	
 }
 
 int intersearch1(int cari, int low, int high, int urut)
@@ -516,12 +516,33 @@ int intersearch1(int cari, int low, int high, int urut)
 		}
 	} 
 	}
-
-		
+	
 	if (low > high)
 	{
 	return -1;
 	}
+}
+
+void updatedata(int i)
+{
+	printf("\n\t=======================================");
+	printf("\n\t ID FILE		: ");
+	scanf("%d", &folder[i].idfile);
+	printf("\t NAMA FILE		: ");
+	scanf("%s", &folder[i].namafile);
+	printf("\t JENIS FILE 		: ");
+	scanf("%s", &folder[i].jns.jenisfile);
+	printf("\t EKSTENSI FILE		: ");
+	scanf("%s", &folder[i].jns.ekstensi);
+	printf("\t TANGGAL 		: ");
+	scanf("%d", &folder[i].date.tanggal);
+	printf("\t BULAN 			: ");
+	scanf("%d", &folder[i].date.bulan);
+	printf("\tTAHUN 			: ");
+	scanf("%d", &folder[i].date.tahun);
+	printf("\t OWNER 			: ");
+	scanf("%s", &folder[i].owner);
+	printf("\t=======================================");
 }
 
 void ubahdata()
@@ -549,6 +570,192 @@ void ubahdata()
 	}
 	getch();
 	system("cls");
+}
+
+void pencariandata()
+{
+	int pilihan;
+	printf("\n\t==========================================");
+	printf("\n\t1. CARI BERDASARKAN ID FILE");
+	printf("\n\t2. CARI BERDASARKAN TANGGAL");
+	printf("\n\t3. CARI BERDASARKAN BULAN");
+	printf("\n\t4. CARI BERDASARKAN TAHUN");
+	printf("\n\tMASUKKAN PILIHAN URUT YANG DI INGINKAN : ");
+	scanf("%d", &pilihan);
+	
+	if(pilihan==1)
+	{
+		printf("\n\t==========================================");
+		printf("\n\tMASUKKAN ID FILE YANG INGIN DI CARI : ");
+		scanf("%d", &cariid);
+		partition(0, i-1, 1);		
+		hasil = intersearch1(cariid, 0, i-1, 1);
+		
+		if(hasil==-1)
+		{
+			printf("\n\tDATA TIDAK DI TEMUKAN");
+		}
+		else
+		{
+			printf("\n\t=======================================");
+			printf("\n\t=          DATA FILE KE %d            =", hasil+1);
+			printf("\n\t=======================================");
+			printf("\n\t ID FILE		: %d", folder[hasil].idfile);
+			printf("\n\t NAMA FILE		: %s", folder[hasil].namafile);
+			printf("\n\t JENIS FILE		: %s", folder[hasil].jns.jenisfile);
+			printf("\n\t EKSTENSI FILE		: %s", folder[hasil].jns.ekstensi);
+			printf("\n\t TANGGAL		: %d", folder[hasil].date.tanggal);
+			printf("\n\t BULAN			: %d", folder[hasil].date.bulan);
+			printf("\n\t TAHUN			: %d", folder[hasil].date.tahun);
+			printf("\n\t OWNER			: %s", folder[hasil].owner);
+			printf("\n\t=======================================");
+		}
+	}
+	else if(pilihan==2)
+	{
+		printf("\n\t==========================================");
+		printf("\n\tMASUKKAN TANGGAL YANG INGIN DI CARI : ");
+		scanf("%d", &cariid);
+		partition(0, i-1, 6);		
+		hasil = intersearch1(cariid, 0, i-1, 2);
+		
+		if(hasil==-1)
+		{
+			printf("\n\tDATA TIDAK DI TEMUKAN");
+		}
+		else
+		{
+			printf("\n\t=======================================");
+			printf("\n\t=          DATA FILE KE %d            =", hasil+1);
+			printf("\n\t=======================================");
+			printf("\n\t ID FILE		: %d", folder[hasil].idfile);
+			printf("\n\t NAMA FILE		: %s", folder[hasil].namafile);
+			printf("\n\t JENIS FILE		: %s", folder[hasil].jns.jenisfile);
+			printf("\n\t EKSTENSI FILE		: %s", folder[hasil].jns.ekstensi);
+			printf("\n\t TANGGAL		: %d", folder[hasil].date.tanggal);
+			printf("\n\t BULAN			: %d", folder[hasil].date.bulan);
+			printf("\n\t TAHUN			: %d", folder[hasil].date.tahun);
+			printf("\n\t OWNER			: %s", folder[hasil].owner);
+			printf("\n\t=======================================");
+		}
+	}
+	else if(pilihan==3)
+	{
+		printf("\n\t==========================================");
+		printf("\n\tMASUKKAN BULAN YANG INGIN DI CARI : ");
+		scanf("%d", &cariid);
+		partition(0, i-1, 7);
+		hasil = intersearch1(cariid, 0, i-1, 3);
+		
+		if(hasil==-1)
+		{
+			printf("\n\tDATA TIDAK DI TEMUKAN");
+		}
+		else
+		{
+			
+			printf("\n\t=======================================");
+			printf("\n\t=          DATA FILE KE %d            =", hasil+1);
+			printf("\n\t=======================================");
+			printf("\n\t ID FILE		: %d", folder[hasil].idfile);
+			printf("\n\t NAMA FILE		: %s", folder[hasil].namafile);
+			printf("\n\t JENIS FILE		: %s", folder[hasil].jns.jenisfile);
+			printf("\n\t EKSTENSI FILE		: %s", folder[hasil].jns.ekstensi);
+			printf("\n\t TANGGAL		: %d", folder[hasil].date.tanggal);
+			printf("\n\t BULAN			: %d", folder[hasil].date.bulan);
+			printf("\n\t TAHUN			: %d", folder[hasil].date.tahun);
+			printf("\n\t OWNER			: %s", folder[hasil].owner);
+			printf("\n\t=======================================");
+		}
+	}
+	else if(pilihan==4)
+	{
+		printf("\n\t==========================================");
+		printf("\n\tMASUKKAN TAHUN YANG INGIN DI CARI : ");
+		scanf("%d", &cariid);
+		partition(0, i-1, 8);
+		hasil = intersearch1(cariid, 0, i-1, 4);
+		
+		if(hasil==-1)
+		{
+			printf("\n\tDATA TIDAK DI TEMUKAN");
+		}
+		else
+		{
+			
+			printf("\n\t=======================================");
+			printf("\n\t=          DATA FILE KE %d            =", hasil+1);
+			printf("\n\t=======================================");
+			printf("\n\t ID FILE		: %d", folder[hasil].idfile);
+			printf("\n\t NAMA FILE		: %s", folder[hasil].namafile);
+			printf("\n\t JENIS FILE		: %s", folder[hasil].jns.jenisfile);
+			printf("\n\t EKSTENSI FILE		: %s", folder[hasil].jns.ekstensi);
+			printf("\n\t TANGGAL		: %d", folder[hasil].date.tanggal);
+			printf("\n\t BULAN			: %d", folder[hasil].date.bulan);
+			printf("\n\t TAHUN			: %d", folder[hasil].date.tahun);
+			printf("\n\t OWNER			: %s", folder[hasil].owner);
+			printf("\n\t=======================================");
+		}
+	}
+	else
+	{
+		printf("\n\tDATA TIDAK DI TEMUKAN");
+	}
+	
+	getch();
+	system("cls");	
+}
+
+void pengurutandata()
+{
+	int pilihan;
+	printf("\n\t=======================================================");
+	printf("\n\tURUTKAN DATA BERDASARKAN");
+	printf("\n\t1. ID FILE");
+	printf("\n\t2. NAMA FILE");
+	printf("\n\t3. JENIS FILE");
+	printf("\n\t4. EKSISTENSI FILE"); 
+	printf("\n\t5. OWNER FILE");
+	printf("\n\t6. TANGGAL");
+	printf("\n\t7. BULAN");
+	printf("\n\t8. TAHUN");
+	printf("\n\t=======================================================");
+	printf("\n\tMASUKKAN PILIHAN URUTAN YANG DI INGINKAN : ");
+	scanf("%d", &pilihan);
+	system("cls");
+	
+	switch(pilihan)
+	{
+		case 1 :
+			partition(0, i-1, 1);
+			lihatdata(); break;
+		case 2 :
+			partition(0, i-1, 2);
+			lihatdata(); break;
+		case 3 :
+			partition(0, i-1, 3);
+			lihatdata(); break;
+		case 4 :
+			partition(0, i-1, 4);
+			lihatdata(); break;
+		case 5 :
+			partition(0, i-1, 5);
+			lihatdata(); break;
+		case 6 :
+			partition(0, i-1, 6);
+			lihatdata(); break;
+		case 7 :
+			partition(0, i-1, 7);
+			lihatdata(); break;
+		case 8 :
+			partition(0, i-1, 8);
+			lihatdata(); break;
+		default : 
+			printf("\n\tMASUKKAN PILIHAN YANG BENAR (1-5)");
+			getch();
+			system("cls");
+			break;
+	}
 }
 
 main()
@@ -606,58 +813,6 @@ main()
 			getch();
 			system("cls");
 			goto menu;
-			break;
-	}
-}
-
-void pengurutandata()
-{
-	int pilihan;
-	printf("\n\t=======================================================");
-	printf("\n\tURUTKAN DATA BERDASARKAN");
-	printf("\n\t1. ID FILE");
-	printf("\n\t2. NAMA FILE");
-	printf("\n\t3. JENIS FILE");
-	printf("\n\t4. EKSISTENSI FILE"); 
-	printf("\n\t5. OWNER FILE");
-	printf("\n\t6. TANGGAL");
-	printf("\n\t7. BULAN");
-	printf("\n\t8. TAHUN");
-	printf("\n\t=======================================================");
-	printf("\n\tMASUKKAN PILIHAN URUTAN YANG DI INGINKAN : ");
-	scanf("%d", &pilihan);
-	system("cls");
-	
-	switch(pilihan)
-	{
-		case 1 :
-			partition(0, i-1, 1);
-			lihatdata(); break;
-		case 2 :
-			partition(0, i-1, 2);
-			lihatdata(); break;
-		case 3 :
-			partition(0, i-1, 3);
-			lihatdata(); break;
-		case 4 :
-			partition(0, i-1, 4);
-			lihatdata(); break;
-		case 5 :
-			partition(0, i-1, 5);
-			lihatdata(); break;
-		case 6 :
-			partition(0, i-1, 6);
-			lihatdata(); break;
-		case 7 :
-			partition(0, i-1, 7);
-			lihatdata(); break;
-		case 8 :
-			partition(0, i-1, 8);
-			lihatdata(); break;
-		default : 
-			printf("\n\tMASUKKAN PILIHAN YANG BENAR (1-5)");
-			getch();
-			system("cls");
 			break;
 	}
 }
