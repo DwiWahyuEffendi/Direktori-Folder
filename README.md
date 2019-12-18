@@ -3,11 +3,15 @@
 <h2>Latar Belakang</h2>
 <p>
 	Tugas akhir ini kami kerjakan untuk memenuhi tugas mata kuliah “Pemrograman Lanjut”. Tugas tersebut merupakan final project untuk membuat sebuah program yaitu “Program Direktori (Folder)” dengan menggunakan bahasa c sebagai penyelesaiannya. Program yang kami buat dengan menggunakan metode sorting dan searching. Metode sorting yang ada dalam program kami adalah merge sort, sedangkan untuk metode searching kami menggunakan metode interpolation search.
+</p>
+<p>
   1) Metode Sorting 
  Untuk metode sorting, kelompok kami menggunakan metode merge sort . Metode merge sort Merge sort merupakan algoritma pengurutan dalam ilmu komputer yang dirancang untuk memenuhi kebutuhan pengurutan atas suatu rangkaian data yang tidak memungkinkan untuk ditampung dalam memori komputer karena jumlahnya yang terlalu besar. Algoritma ini ditemukan oleh John von Neumann pada tahun 1945.  
 Algoritma pengurutan data merge sort dilakukan dengan menggunakan cara divide and conquer yaitu dengan memecah kemudian menyelesaikan setiap bagian kemudian menggabungkannya kembali. Pertama data dipecah menjadi 2 bagian dimana bagian pertama merupakan setengah (jika data genap) atau setengah minus satu (jika data ganjil) dari seluruh data, kemudian dilakukan pemecahan kembali untuk masing-masing blok sampai hanya terdiri dari satu data tiap blok. 
 Setelah itu digabungkan kembali dengan membandingkan pada blok yang sama apakah data pertama lebih besar daripada data ke-tengah+1, jika ya maka data ke-tengah+1 dipindah sebagai data pertama, kemudian data ke-pertama sampai ke-tengah digeser menjadi data ke-dua sampai ke-tengah+1, demikian seterusnya sampai menjadi satu blok utuh seperti awalnya. Sehingga metode merge sort merupakan metode yang membutuhkan fungsi rekursi untuk penyelesaiannya. 
-  2) Metode Searching 
+</p>
+<p>
+ 2) Metode Searching 
 Adalah algoritma pencarian yang mirip seperti binary search, karena sebelum pencarian dilakukan pengurutan terlebuh dahulu. Keuntungan dari interpolation sort adalah, lebih cepat dalam pencarian.  Kerugiannya adalah algoritma ini hanya bisa digunakan pada data yang terurut. 
 </p>
 
