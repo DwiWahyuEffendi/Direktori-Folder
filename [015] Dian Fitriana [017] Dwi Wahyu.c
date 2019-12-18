@@ -635,7 +635,7 @@ void pencariandata()
 			printf("\n\t TANGGAL		: %d", folder[hasil].date.tanggal);
 			printf("\n\t BULAN			: %d", folder[hasil].date.bulan);
 			printf("\n\t TAHUN			: %d", folder[hasil].date.tahun);
-			printf("\n\t OWNER			: %s", folder[hasil].owner);
+			printf("\n\t OWNER			: %s", folder[hasil].owner);	
 			printf("\n\t=======================================");
 		}
 	}
