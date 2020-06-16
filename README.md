@@ -27,7 +27,7 @@ Adalah algoritma pencarian yang mirip seperti binary search, karena sebelum penc
  <t>Program aplikasi Direktori (folder) ini merupakan program yang mengimplementasikan metode CRU (Creat, Read, Update). Metode ini digunakan untuk menambah, melihat, serta mengupdate data. Disamping itu, dalam aplikasi Direktori (Folder) kali ini juga terdapat metode sorting yakni metode Merge Sort. Dengan adanya metode tersebut dapat mempermudah pengguna program dalam mengakses berbagai fitur yang telah kami sediakan. Sekian laporan yang dapat kami jabarkan terkait final project mata kuliah pemrograman lanjut dengan judul “ Aplikasi Direktori (Folder)”. Dengan minimnya pengetahuan yang kami miliki dalam pembuatan laporan ini, sehingga kami mohon kritik dan saran yang membangun agar laporan ini dapat lebih bermanfaat, Terima kasih.</t> 
 </p>
 
-<h2>Karya</h2>
+<h2>Contributors</h2>
   <table boder="1">
         <tr>
 		<td>NAMA</td>
