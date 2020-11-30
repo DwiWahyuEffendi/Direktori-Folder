@@ -33,10 +33,6 @@ Adalah algoritma pencarian yang mirip seperti binary search, karena sebelum penc
 		<td>NAMA</td>
 		<td>NPM</td>	
         </tr>
-        <tr>
-		<td>DIAN FITRIANA</td>
-		<td>18081010015</td>
-	</tr>
 	<tr>
 		<td>DWI WAHYU EFFENDI</td>
 		<td>18081010017</td>
